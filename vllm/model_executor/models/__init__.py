@@ -30,7 +30,8 @@ _MODELS = {
     "LlamaForCausalLM": ("llama", "LlamaForCausalLM"),
     # For decapoda-research/llama-*
     "LLaMAForCausalLM": ("llama", "LlamaForCausalLM"),
-    "MistralForCausalLM": ("llama", "LlamaForCausalLM"),
+    # "MistralForCausalLM": ("llama", "LlamaForCausalLM"),
+    "MistralForCausalLM": ("mistral", "MistralForCausalLM"),
     "MixtralForCausalLM": ("mixtral", "MixtralForCausalLM"),
     "QuantMixtralForCausalLM": ("mixtral_quant", "MixtralForCausalLM"),
     # transformers's mpt class has lower case
@@ -63,7 +64,10 @@ _ROCM_PARTIALLY_SUPPORTED_MODELS = {
 }
 
 # Models not supported by Neuron.
-_NEURON_SUPPORTED_MODELS = {"LlamaForCausalLM": "neuron.llama"}
+_NEURON_SUPPORTED_MODELS = {
+    "LlamaForCausalLM": "neuron.llama",
+    "MistralForCausalLM": "neuron.mistral",
+}
 
 
 class ModelRegistry:
